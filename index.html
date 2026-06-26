@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anwesenheit App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <h1>📋 Anwesenheit</h1>
+
+    <div class="input-box">
+      <input type="text" id="nameInput" placeholder="Schülername">
+      <button onclick="addStudent()">Hinzufügen</button>
+    </div>
+
+    <div id="list"></div>
+
+    <div class="summary">
+      <span id="presentCount">0</span> ✅  
+      <span id="absentCount">0</span> ❌
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
