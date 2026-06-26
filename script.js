@@ -1,5 +1,16 @@
 let students = [];
 
+function saveData() {
+  localStorage.setItem("students", JSON.stringify(students));
+}
+
+function loadData() {
+  const data = localStorage.getItem("students");
+  if (data) {
+    students = JSON.parse(data);
+  }
+}
+
 function addStudent() {
   const input = document.getElementById("nameInput");
   const name = input.value.trim();
@@ -8,6 +19,14 @@ function addStudent() {
 
   students.push({ name, status: "none" });
   input.value = "";
+
+  saveData();
+  render();
+}
+
+function setStatus(index, status) {
+  students[index].status = status;
+  saveData();
   render();
 }
 
@@ -34,12 +53,10 @@ function render() {
       let diff = endX - startX;
 
       if (diff > 50) {
-        students[index].status = "present";
+        setStatus(index, "present");
       } else if (diff < -50) {
-        students[index].status = "absent";
+        setStatus(index, "absent");
       }
-
-      render();
     });
 
     list.appendChild(div);
@@ -52,4 +69,6 @@ function render() {
   document.getElementById("absentCount").textContent = absent;
 }
 
+// 🔥 Beim Start laden
+loadData();
 render();
