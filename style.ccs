@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.student {
+  background: #222;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  text-align: center;
+  user-select: none;
+  touch-action: pan-y;
+  transition: background 0.3s;
+}
+
+.student.present {
+  background: #1f6f3f;
+}
+
+.student.absent {
+  background: #7a1f1f;
+}
+
+.summary {
+  margin-top: 20px;
+  text-align: center;
+}
